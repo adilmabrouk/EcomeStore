@@ -17,17 +17,17 @@ namespace Infastructure.Data
         }
         public async Task<Product> GetProductAsync(int id)
         {
-            var product = await _storeDBContext.products
+            var product = await _storeDBContext.Products
                           .Include(b => b.ProductBrand)
                           .Include(t => t.ProductType)
                           .FirstOrDefaultAsync(p => p.Id == id);
-                return product;     
+            return product;     
         }
 
   
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-                var products = await _storeDBContext.products
+                var products = await _storeDBContext.Products
                                .Include(b => b.ProductBrand)
                                .Include(t => t.ProductType)
                                .ToListAsync();
@@ -36,13 +36,13 @@ namespace Infastructure.Data
 
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
         {
-            var types = await _storeDBContext.productTypes.ToListAsync();
+            var types = await _storeDBContext.ProductTypes.ToListAsync();
             return types;
         }
 
         public async Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync()
         {
-            var brands = await _storeDBContext.productBrands.ToListAsync();
+            var brands = await _storeDBContext.ProductBrands.ToListAsync();
             return brands;
         }
 
