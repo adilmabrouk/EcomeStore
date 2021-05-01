@@ -11,9 +11,15 @@ namespace Core.Specification
 
         List<Expression<Func<T, object>>> Includes { get; }
 
-        //  delegate bool Criteriaa(T TEntity);
+        Expression<Func<T,object>> OrderBy { get; }
 
-        //  delegate object Include(List<T> TEntity);
+        Expression<Func<T, object>> OrderByDescending { get; }
+
+        int Take { get; }
+
+        int Skip { get; }
+
+        bool IsPagingEnabled { get; }
 
 
     }
