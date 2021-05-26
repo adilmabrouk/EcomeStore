@@ -1,0 +1,58 @@
+.example-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.filter mat-icon {
+  font-size: 2rem;
+}
+.filter span {
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}
+
+mat-drawer-content {
+  position: relative;
+  overflow: hidden;
+}
+/* .pagination {
+  position: fixed;
+  bottom: 10px;
+} */
+mat-drawer {
+  width: 20%;
+}
+
+.brand span,
+.type span,
+.sort span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+mat-form-field {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+mat-toolbar,
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .sidenav {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .filter {
+    visibility: hidden;
+  }
+}
+
+.active {
+  background: #fc786e98;
+}

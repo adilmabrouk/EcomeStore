@@ -1,0 +1,118 @@
+<mat-toolbar>
+  <button
+    class="filter"
+    (click) =" toggle()"
+    mat-icon-button>
+    <mat-icon>menu</mat-icon>
+    <span>Filter</span>
+  </button>
+
+  <div class="search">
+    <mat-form-field
+       appearance="outline">
+      <input
+        matInput
+        #search
+        placeholder="Search..."
+        (keyup.enter)="onSearch()">
+    </mat-form-field>
+    <button
+      class="mx-1"
+      mat-raised-button
+      color="warn"
+      (click)="onSearch()">
+      Search
+    </button>
+    <button
+      class="mx-1"
+      mat-raised-button
+      (click)="onReset()">
+      Reset
+    </button>
+  </div>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+
+  <mat-drawer class="sidenav p-2" mode="side" [opened]="isOpen">
+    <div class="sort">
+      <span>Sort By</span> <br>
+      <mat-form-field
+          appearance="outline"
+          floatLabel="always">
+        <!-- <mat-label>Sort</mat-label> -->
+        <select
+           matNativeControl
+           (change)="onSortSelected($any($event.target).value)">
+          <option
+                  *ngFor='let sort of sortOption'
+                  [value]="sort.value">
+
+             {{sort.name}}
+
+          </option>
+        </select>
+      </mat-form-field>
+    </div>
+     <div class="brand">
+      <span>Brand</span>
+      <mat-selection-list
+        [multiple]="false">
+      <mat-list-option
+        *ngFor="let brand of brands"
+        [class.active]="brand.id === brandSelected"
+        [value]="brand.id"
+        (click)="onBrandSelected(brand.id)"
+        >
+          {{brand.name}}
+        </mat-list-option>
+      </mat-selection-list>
+     </div>
+
+    <div class="type pt-2">
+      <span>Type</span>
+      <mat-selection-list
+          [multiple]="false">
+      <mat-list-option
+        *ngFor="let type of types"
+        [class.active]="type.id === typeSelected"
+        [value]="type.id"
+        (click)="onTypeSelected(type.id)"
+      >
+          {{type.name}}
+
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+      <div class="content m-3">
+          <div fxLayout="row wrap" fxLayoutGap="16px grid">
+              <div
+              fxFlex="25%"
+              fxFlex.md="33%"
+              fxFlex.sm="50%"
+              fxFlex.xs="100%"
+              *ngFor="let product of products">
+
+                    <app-product-item
+                      [product] ="product">
+                    </app-product-item>
+
+              </div>
+          </div>
+      </div>
+
+      <div class="pagination pb-3 pt-5" *ngIf="totalCount > 0">
+
+              <app-pager
+              class="m-auto"
+              [totalCount]="totalCount"
+              (pageChanged)="onPageChanged($event)"
+              [pageSize]="pageSize">
+              </app-pager>
+
+      </div>
+  </mat-drawer-content>
+</mat-drawer-container>

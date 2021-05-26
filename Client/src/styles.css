@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 7px 0 !important;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mat-form-field {
+  font-weight: 100;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 6px 0 !important;
+}
+
+.mat-list-single-selected-option,
+.mat-list-single-selected-option:hover,
+.mat-list-single-selected-option:focus {
+  background: transparent;
+}

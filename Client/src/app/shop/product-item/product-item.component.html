@@ -1,0 +1,17 @@
+<mat-card class="card text-center">
+     <div class="imgContainer">
+       <img [src]="product.pictureURL" alt="">
+     </div>
+     <mat-card-content>
+      <p class="pt-2">
+        {{product.name}}
+      </p>
+      <span>
+        {{product.price | currency}}
+      </span>
+    </mat-card-content>
+    <mat-card-actions class="p-0">
+      <button mat-raised-button>Add To Cart</button>
+      <button mat-raised-button>View Product</button>
+    </mat-card-actions>
+</mat-card>

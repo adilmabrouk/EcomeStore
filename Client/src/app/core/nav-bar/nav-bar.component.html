@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>My Logo</span>
+    <div class="middle" *ngIf="!deviceXs">
+        <a mat-button href="">Home</a>
+        <a mat-button href="">Shop</a>
+        <a mat-button href="">Contact</a>
+    </div>
+    <div class="right">
+      <a mat-icon-button>
+          <mat-icon matBadge="5" matBadgeOverlap="false" matBadgeColor="warn">
+            shopping_cart
+          </mat-icon>
+      </a>
+      <a mat-stroked-button>Login</a>
+      <a mat-stroked-button>Sign up</a>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="deviceXs" class="center">
+    <div class="middle">
+      <a mat-button href="">Home</a>
+      <a mat-button href="">Shop</a>
+      <a mat-button href="">Contact</a>
+  </div>
+  </mat-toolbar-row>
+</mat-toolbar>

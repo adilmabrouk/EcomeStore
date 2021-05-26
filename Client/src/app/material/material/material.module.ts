@@ -21,6 +21,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 const material = [
   MatSidenavModule,
@@ -42,7 +44,8 @@ const material = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatTooltipModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatRadioModule
 ]
 @NgModule({
   declarations: [],

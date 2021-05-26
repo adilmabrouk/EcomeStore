@@ -1,12 +1,16 @@
-mat-toolbar {
+mat-toolbar-row,
+mat-toolbar-row .middle {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 a {
   margin-left: 1rem;
   text-decoration: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
 }
 .middle a {
   color: black;
