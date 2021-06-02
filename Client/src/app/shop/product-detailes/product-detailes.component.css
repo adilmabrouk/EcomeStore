@@ -1,0 +1,28 @@
+.product__box {
+  display: flex;
+  height: auto;
+  padding-top: 3rem;
+}
+.right {
+  padding-top: 6rem;
+  padding-left: 6rem;
+}
+.right h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.right h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 2rem;
+}
+.right span {
+  color: rgb(104, 104, 104);
+}
+button {
+  margin-top: 3rem;
+}
+img {
+  width: auto;
+  height: 500px;
+}

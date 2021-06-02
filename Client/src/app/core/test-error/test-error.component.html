@@ -1,0 +1,9 @@
+<button class="m-2" mat-raised-button color="warn" (click)='get404Error()'>Get 404 Error</button>
+<button class="m-2" mat-raised-button color="warn" (click)='get500Error()'>Get 500 Error</button>
+<button class="m-2" mat-raised-button color="warn" (click)='get400Error()'>Get 400 Error</button>
+<button class="m-2" mat-raised-button color="warn" (click)='get400ErrorValidation()'>Get 400 Error Validation</button>
+<div class="pt-5" *ngIf="validationErrors">
+  <ul>
+    <li class="text-danger" *ngFor="let error of validationErrors">{{error}}</li>
+  </ul>
+</div>

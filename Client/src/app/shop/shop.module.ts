@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { SharedModule } from './../shared/shared.module';
 import { MaterialModule } from './../material/material/material.module';
 import { NgModule } from '@angular/core';
@@ -6,6 +7,7 @@ import { ShopComponent } from './shop.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailesComponent } from './product-detailes/product-detailes.component';
 
 
 
@@ -13,14 +15,16 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ShopComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    ProductDetailesComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports:[
     ShopComponent

@@ -1,0 +1,15 @@
+<div *ngIf="product" class="product__box container">
+  <div class="left">
+       <div class="img__box">
+         <img [src]="product.pictureURL" alt="">
+       </div>
+  </div>
+  <div class="right">
+     <h3>{{product.name}}</h3>
+     <hr>
+     <p>{{product.description}}</p>
+     <h4>{{product.price | currency}}</h4>
+     <span>DELIVERY IN 6-8 DAYS</span> <br>
+     <button mat-raised-button color="warn">Add To Basket</button>
+  </div>
+</div>

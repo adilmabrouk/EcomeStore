@@ -4,6 +4,10 @@ mat-toolbar-row .middle {
   justify-content: space-between;
   align-items: center;
 }
+mat-toolbar span {
+  cursor: pointer;
+  user-select: none;
+}
 a {
   margin-left: 1rem;
   text-decoration: none;
@@ -26,4 +30,8 @@ a {
 mat-icon {
   font-size: 1.9rem;
   text-align: center;
+}
+.active {
+  color: white !important;
+  background-color: #fc857d;
 }

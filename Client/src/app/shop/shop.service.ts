@@ -1,3 +1,4 @@
+import { IProduct } from 'src/app/shared/models/product';
 import { map } from 'rxjs/operators';
 import { ITypes } from './../shared/models/productTypes';
 import { IBrands } from './../shared/models/productBrands';
@@ -56,6 +57,11 @@ export class ShopService {
         return response.body;
       })
     )
+  }
+
+  getProductById(id : number)
+  {
+    return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
   }
 
   getBrands()
