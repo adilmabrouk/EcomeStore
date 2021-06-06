@@ -1,3 +1,5 @@
+import { ProductsSliderComponent } from './../shared/components/products-slider/products-slider.component';
+import { BannerComponent } from './../shared/components/banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './../shared/shared.module';
 import { MaterialModule } from './../material/material/material.module';
@@ -8,7 +10,8 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailesComponent } from './product-detailes/product-detailes.component';
-
+import { HomeComponent } from '../home/home.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 
@@ -16,7 +19,10 @@ import { ProductDetailesComponent } from './product-detailes/product-detailes.co
   declarations: [
     ShopComponent,
     ProductItemComponent,
-    ProductDetailesComponent
+    ProductDetailesComponent,
+    HomeComponent,
+    BannerComponent,
+    ProductsSliderComponent
   ],
   imports: [
     CommonModule,
@@ -24,10 +30,15 @@ import { ProductDetailesComponent } from './product-detailes/product-detailes.co
     FlexLayoutModule,
     FormsModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    CarouselModule.forRoot()
   ],
-  exports:[
-    ShopComponent
+  exports: [
+    ShopComponent,
+    SharedModule,
+    ProductItemComponent,
+    ProductDetailesComponent,
+    CarouselModule
   ]
 })
 export class ShopModule { }

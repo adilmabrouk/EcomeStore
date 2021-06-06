@@ -22,11 +22,11 @@ import { ToastrModule } from 'ngx-toastr';
     MaterialModule,
     RouterModule,
     ToastrModule.forRoot({
-      positionClass:'toast-bottom-right',
-      preventDuplicates:true
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
     })
   ],
-  exports:[
+  exports: [
     NavBarComponent
   ]
 })

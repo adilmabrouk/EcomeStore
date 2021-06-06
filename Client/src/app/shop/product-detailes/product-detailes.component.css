@@ -8,7 +8,8 @@
   padding-left: 6rem;
 }
 .right h3 {
-  font-size: 2rem;
+  font-size: 3rem;
+  padding-bottom: 1rem;
   font-weight: bold;
 }
 .right h4 {
@@ -17,7 +18,7 @@
   padding-top: 2rem;
 }
 .right span {
-  color: rgb(104, 104, 104);
+  color: #ff0000;
 }
 button {
   margin-top: 3rem;
@@ -25,4 +26,57 @@ button {
 img {
   width: auto;
   height: 500px;
+}
+.description {
+  font-size: 1.3rem;
+  color: rgb(104, 104, 104);
+  line-height: 1.9rem;
+}
+.addToCart {
+  padding: 1rem 2rem;
+  background-color: rgb(48, 48, 48);
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+.addToCart:hover {
+  padding: 1.1rem 2.1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .product__box {
+    flex-direction: column;
+    margin: auto;
+    padding-bottom: 2rem;
+  }
+  .right {
+    margin: auto;
+    padding-left: 0;
+  }
+
+  .right h3 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    font-weight: bold;
+  }
+  .left {
+    margin: auto;
+  }
+  .description {
+    font-size: 1rem;
+    color: rgb(104, 104, 104);
+    line-height: 1.9rem;
+  }
+  button {
+    margin-top: 1rem;
+  }
+  .right h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 1rem;
+  }
 }

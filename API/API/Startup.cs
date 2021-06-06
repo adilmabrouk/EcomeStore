@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Linq;
+using StackExchange.Redis;
 
 namespace API
 {
@@ -31,7 +31,15 @@ namespace API
 
             services.AddDbContext<StoreDBContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IBasketRepository, BasketRepositoty>();
 
             services.AddScoped(typeof(IGeniricRepository<>), typeof(GeniricRepository<>));
 

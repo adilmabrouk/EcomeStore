@@ -6,7 +6,6 @@ import { IProduct } from '../shared/models/product';
 import { Subscription } from 'rxjs';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 
-
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -14,29 +13,37 @@ import { MediaChange, MediaObserver } from '@angular/flex-layout';
 })
 export class ShopComponent implements OnInit, OnDestroy {
 
-  @ViewChild('search', {static : true}) searchTerm! : ElementRef;
-
-  products! : IProduct[];
-  brands! : IBrands[] ;
-  types! : ITypes[] ;
-  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
-  mediaSub! : Subscription;
-  isOpen : boolean = false;
+  @ViewChild('search', {static : true}) searchTerm!: ElementRef;
+  products!: IProduct[];
+  brands!: IBrands[] ;
+  types!: ITypes[] ;
+  mediaSub!: Subscription;
+  isOpen: boolean = false;
   brandSelected = 0;
   typeSelected = 0;
   sortSelected = '';
   sortOption = [
-    {name:'Alphabatecal', value:''},
-    {name:'Price : Low To High', value:'priceAsc'},
-    {name:'Price : High To Low', value:'priceDesc'}
-  ]
+    {name: 'Alphabatecal', value: ''},
+    {name: 'Price : Low To High', value: 'priceAsc'},
+    {name: 'Price : High To Low', value: 'priceDesc'}
+  ];
   search!: string;
   pageNumber!: number;
   pageSize!: number;
   totalCount!: number;
 
+  slides = [
+    {image: 'assets/pic1.jpg'},
+    {image: 'assets/pic.jpg'},
+    {image: 'assets/pic2.jpg'},
+    {image: 'assets/pic1.jpg'},
+    {image: 'assets/pic1.jpg'},
+    {image: 'assets/pic2.jpg'},
+    {image: 'assets/pic.jpg'},
+    {image: 'assets/pic1.jpg'}
+  ];
 
-  constructor(private shopService :  ShopService , private mediaObserver : MediaObserver) { }
+  constructor(private shopService: ShopService , private mediaObserver: MediaObserver) { }
 
   ngOnInit(): void {
 
@@ -47,7 +54,7 @@ export class ShopComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy() :void {
+  ngOnDestroy(): void {
     this.mediaSub.unsubscribe();
   }
 
@@ -71,7 +78,7 @@ export class ShopComponent implements OnInit, OnDestroy {
     getBrands()
     {
       this.shopService.getBrands().subscribe(response =>{
-        this.brands = [{id:0,name:'All'}, ...response];
+        this.brands = [{id: 0, name: 'All'}, ...response];
       },
       error =>
       {
@@ -83,7 +90,7 @@ export class ShopComponent implements OnInit, OnDestroy {
      getTypes()
       {
           this.shopService.getTypes().subscribe(response =>{
-            this.types = [{id:0,name:'All'}, ...response];
+            this.types = [{id: 0, name: 'All'}, ...response];
           },
           error =>
           {

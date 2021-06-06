@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'notfound' , component : NotFoundComponent},
   {path:'server-error' , component : ServerErrorComponent},
   {path:'product/:id' , component : ProductDetailesComponent},
-  {path:'**' , redirectTo:'', pathMatch:'full'}
+  {path:'**' , redirectTo:'notfound', pathMatch:'full'}
 ];
 
 @NgModule({

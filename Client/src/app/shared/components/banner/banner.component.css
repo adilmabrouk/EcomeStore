@@ -1,0 +1,31 @@
+i {
+  font-size: 4rem;
+  color: #f8600c;
+}
+.col {
+  display: flex;
+  align-items: center;
+}
+span {
+  padding-left: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.box-content {
+  line-height: 1.5rem;
+}
+
+.row {
+  text-align: center;
+  margin: auto;
+}
+.shipping {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+}
+
+@media screen and (max-width: 900px) {
+  .col {
+    padding-bottom: 2rem;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="container slider-product">
+  <carousel *ngIf='products'
+          [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="true"
+          [indicatorsByChunk]="true">
+  <slide *ngFor="let product of products">
+         <div routerLink="/product/{{product.id}}" style="cursor: pointer;">
+          <app-product-item [product]="product"></app-product-item>
+         </div>
+  </slide>
+</carousel>
+</div>
